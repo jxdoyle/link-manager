@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Manager</title>
+
+    <!-- custom CSS styling -->
+    <link rel="stylesheet" href="/public/css/index.css" type="text/css">
+    <!-- latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body onload="fetchBookmarks()">
+    <div class="bookmark-app">
+        <div class="container">
+            <!-- heading -->
+            <div class="col-md-12 text-center well">
+                <h1>Bookmark Manager</h1>
+            </div>
+            <!-- main section -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- default bookmarks-->
+                    <div id="defaultDiv" style="display: block;">
+                        <div class="row">
+                            <!-- loop through array and push a container for each -->
+                            <% links.forEach(function(links) { %>
+                                <div class="col-md-6">
+                                    <div>
+                                        <h3 class="well">
+                                            <%= links.name %>
+                                            <span class="pull-right">
+                                                <a class="btn btn-default" target="_blank" href="<%= links.url %>">Visit</a>
+                                            </span>
+                                        </h3>
+                                    </div>
+                                </div>
+                            <% }); %> 
+                        </div>
+                    </div>
+                    <!-- seperator -->
+                    <div id="col-md-12">
+                        <span id="pull-right">
+                            <!-- button to hide and show default section -->
+                            <button onclick="toggleDefault()" class="btn btn-danger btn-block" id="toggleDefault">Hide Default Links</button>
+                        </span>
+                    </div>
+                    <!-- form section -->
+                    <div id='formDiv' class="bookmark-form well" style="display: none;">
+                        <form id="myForm">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="text" name="siteName" autofocus="autofocus" placeholder="Site name" id="siteName">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="url" name="urlName" placeholder="Site URL" id="urlName">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                       <button class="btn btn-primary btn-block" type="submit" id="save">Save Link</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- seperator-->
+                    <div id="col-md-12">
+                        <span id="pull-right">
+                            <!-- button to hide and show form section -->
+                            <button onclick="toggleForm()" class="btn btn-primary btn-block" id="toggleForm">Click to Add Links</button>
+                        </span>
+                    </div>
+                    <!-- local storage bookmarks -->
+                    <div id="resultDiv">
+                        <div class="row"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- tyring out ejs partials (simple "created by.." footer) -->
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+    <!--    jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- custom JavaScript file -->
+    <script src="/public/script/script.js"></script>
+
+    <!-- frontend functions --> 
+    <script>
+        // hide form section
+        function toggleForm(){
+            var form = document.getElementById('formDiv')
+            if (form.style.display == 'none') {
+                form.style.display = 'block';
+                // change form button
+                document.getElementById('toggleForm').className = 'btn btn-danger btn-block'
+                document.getElementById('toggleForm').innerHTML = 'Click to Close'
+            }
+            else {
+                form.style.display = 'none';
+                // change form button
+                document.getElementById('toggleForm').className = 'btn btn-primary btn-block'
+                document.getElementById('toggleForm').innerHTML = 'Click to Add Links'
+            }
+        }
+
+        // hide default section
+        function toggleDefault(){
+            var defaultLinks = document.getElementById('defaultDiv')
+            if (defaultLinks.style.display == 'none') {
+                defaultLinks.style.display = 'block';
+                // change default button
+                document.getElementById('toggleDefault').className = 'btn btn-danger btn-block'
+                document.getElementById('toggleDefault').innerHTML = 'Hide Default Links'
+            }
+            else {
+                defaultLinks.style.display = 'none';
+                // change default button
+                document.getElementById('toggleDefault').className = 'btn btn-primary btn-block'
+                document.getElementById('toggleDefault').innerHTML = 'Show Default Links'
+            }
+        }
+    </script>
+</body>
+</html>

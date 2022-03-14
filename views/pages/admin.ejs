@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Manager (Admin)</title>
+
+    <!-- custom CSS styling-->
+    <link rel="stylesheet" href="/public/css/admin.css" type="text/css">
+    <!-- latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body onload="fetchBookmarks()">
+    <!-- <form action=" http://localhost:3000/index" method="POST">
+    </form> -->
+
+    <div class="bookmark-app">
+        <div class="container">
+            <!-- heading -->
+            <div class="col-md-12 text-center well">
+                <h1>Default Link Setup</h1>
+            </div>
+            <!-- main section -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- preview of links -->
+                    <div class="preview well">
+                        <h1 id="preview">Preview</h1>
+                        <!-- default bookmarks-->
+                        <div id="defaultDiv" style="display: block;">
+                            <div class="row">
+                                <!-- loop through array and push a container for each -->
+                                <% links.forEach(function(links) { %>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <h3 class="well">
+                                                <%= links.name %>
+                                                <span class="pull-right">
+                                                    <a class="btn btn-default" target="_blank" href="<%= links.url %>">Visit</a>
+                                                </span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                <% }); %>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- form section -->
+                    <div id='formDiv' class="bookmark-form well">
+                        <form id="myForm" action="/admin" method="POST">
+                            <div class="row">
+                                <!-- link one -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name[0]" value="<%= links[0].name %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="url" name="url[0]" value="<%= links[0].url %>">
+                                    </div>
+                                </div>
+                                <!-- link two -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name[1]" value="<%= links[1].name %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="url" name="url[1]" value="<%= links[1].url %>">
+                                    </div>
+                                </div>
+                                <!-- link three -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name[2]" value="<%= links[2].name %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="url" name="url[2]" value="<%= links[2].url %>">
+                                    </div>
+                                </div>
+                                <!-- link four -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name[3]" value="<%= links[3].name %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="url" name="url[3]" value="<%= links[3].url %>">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- seperator -->
+                            <div id="col-md-12">
+                                <span id="pull-right">
+                                    <!-- button to save changes -->
+                                    <button class="btn btn-danger btn-block" type="submit" id="saveChanges">Save Changes</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- tyring out ejs partials (simple "created by.." footer) -->
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+    <!--    jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- frontend functions --> 
+    <script>
+ 
+    </script>
+</body>
+</html>

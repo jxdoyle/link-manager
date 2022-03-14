@@ -1,0 +1,32 @@
+/* index page css */
+.bookmark-form label {
+    display:  block;
+    font-weight:  300;
+}
+.bookmark-form input {
+    width:  100%;
+    padding: 15px;
+    border:  0;
+    border-radius:  3px;
+}
+.bookmark-form button {
+    padding: 12px 15px;
+}
+.text-center {
+    margin-top: 20px !important;
+}
+.well {
+    margin: 0;
+}
+.col-md-12 {
+    margin-bottom: 20px;
+}
+#toggleForm, #toggleDefault {
+    margin-bottom: 20px;
+}
+#formDiv {
+    padding-bottom: 4px !important;
+}
+body {
+    margin-bottom: 40px;
+}

@@ -1,0 +1,45 @@
+/* admin page css */
+.bookmark-form label {
+    display:  block;
+    font-weight:  300;
+}
+.bookmark-form input {
+    width:  100%;
+    padding: 15px;
+    border:  0;
+    border-radius:  3px;
+}
+.bookmark-form button {
+    padding: 12px 15px;
+}
+.text-center {
+    margin-top: 20px !important;
+}
+.well {
+    margin: 0;
+}
+.col-md-12 {
+    margin-bottom: 20px;
+}
+#toggleForm, #toggleDefault {
+    margin-bottom: 20px;
+}
+#formDiv {
+    padding-bottom: 4px !important;
+}
+.preview {
+    background-color: #337ab7 !important;
+    padding-bottom: 4px !important;
+}
+#preview {
+    color: #fff;
+    margin-top: 0 !important;
+}
+body {
+    margin-bottom: 40px;
+}
+button {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 10px !important;
+}
