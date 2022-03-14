@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pwa": "create-pwa --icon=\"path/to/your/icon.png\" --launch=\"path/to/your/launch.png\""
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,8 @@
     "cors": "^2.8.5",
     "ejs": "^3.1.6",
     "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "create-pwa": "^2.4.0"
   }
 }
