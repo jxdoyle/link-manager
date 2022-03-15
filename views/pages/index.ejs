@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="/public/css/index.css" type="text/css">
     <!-- latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <!-- pwa -->
-    <link rel="manifest" href="manifest.json" />
 </head>
 <body onload="fetchBookmarks()">
     <div class="bookmark-app">
@@ -93,10 +91,8 @@
 
     <!--    jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
     <!-- custom JavaScript file -->
     <script src="/public/script/script.js"></script>
-
     <!-- frontend functions --> 
     <script>
         // hide form section
@@ -115,7 +111,6 @@
                 document.getElementById('toggleForm').innerHTML = 'Click to Add Links'
             }
         }
-
         // hide default section
         function toggleDefault(){
             var defaultLinks = document.getElementById('defaultDiv')
@@ -131,19 +126,6 @@
                 document.getElementById('toggleDefault').className = 'btn btn-primary btn-block'
                 document.getElementById('toggleDefault').innerHTML = 'Show Default Links'
             }
-        }
-
-        if ('serviceWorker' in navigator) {
-	        window.addEventListener('load', () => {
-		        navigator.serviceWorker.register('./service-worker.js').then(
-		        	registration => {
-		        		console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
-		        	},
-		        	error => {
-		        		console.log(`ServiceWorker registration failed: ${error}`);
-		        	}
-        		);
-        	});
         }
     </script>
 </body>
