@@ -1,0 +1,16 @@
+{
+    "name": "Link Manager Progressive Web App",
+    "short_name": "Link Manager PWA",
+    "description": "A link manager app built using node.js, express, and ejs",
+    "icons": [{
+        "src": "icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }],
+    "theme_color": "#F1F1F1",
+    "background_color": "#FFFFFF",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/"
+}
