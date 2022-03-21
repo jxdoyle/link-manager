@@ -5,18 +5,18 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 80
 
 app.use(bodyParser.json());                         // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({extended: true}));   // to support URL-encoded bodies
 app.use('/public', express.static(__dirname + '/public'));
 app.use(cors());
 
-// give service worker broader scope
-app.get('/public/service-worker.js', (req, res) => {
-  res.sendFile('./public/service-worker.js', {headers: {'Service-Worker-Allow': '/'}});
-});
 
+// give service worker broader scope
+// app.get('./public/service-worker.js', (req, res) => {
+//   res.sendFile('./public/service-worker.js', {headers: {'Service-Worker-Allow': '/'}});
+// });
 
 
 // set the view engine to ejs
